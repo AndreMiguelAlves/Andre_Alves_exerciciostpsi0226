@@ -1,0 +1,6 @@
+dia = input("Digite um dia da semana: ").lower()
+
+if dia == "sábado" or dia == "sabado" or dia == "domingo":
+    print("Fim de semana")
+else:
+    print("Dia útil")
