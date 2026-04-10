@@ -1,0 +1,28 @@
+nome = input("Introduz o teu nome completo: ")
+
+
+valido = True
+
+for i in range(len(nome)):
+    caractere = nome[i]
+    codigo = ord(caractere) 
+    
+    if not (65 <= codigo <= 90 or 97 <= codigo <= 122 or codigo == 32):
+        print("Nome inválido: contém caracteres não permitidos.")
+        valido = False
+        break
+    
+    if i == 0 or nome[i-1] == " ":
+        if not (65 <= codigo <= 90): 
+            print(f"Nome inválido: '{caractere}' devia ser maiúscula.")
+            valido = False
+            break
+    
+    else:
+        if codigo != 32 and not (97 <= codigo <= 122):
+            print(f"Nome inválido: '{caractere}' devia ser minúscula.")
+            valido = False
+            break
+
+if valido:
+    print("Nome válido!")
